@@ -13,6 +13,7 @@ import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
+import { PhoneIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 interface Props {
   platforms: Platform[];
 }
@@ -28,12 +29,19 @@ const PlatformIconList = ({ platforms }: Props) => {
     ios: MdPhoneIphone,
     web: BsGlobe,
   };
+
+  //console.log(platforms);
+
   return (
-    <HStack marginY={1}>
-      {platforms.map((platform) => (
-        <Icon as={iconMap[platform.slug]} color={"gray.500"} />
-      ))}
-    </HStack>
+    <>
+      <HStack marginY={1}>
+        {platforms?.map((platform) => (
+          <Icon as={iconMap[platform.slug]} color={"gray.500"} />
+        ))}
+
+        {/* <AddIcon /> */}
+      </HStack>
+    </>
   );
 };
 

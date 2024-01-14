@@ -4,13 +4,14 @@ import { CanceledError } from "axios";
 export interface Platform{
     id:number;
     name:string;
-    slug:string
+    slug:string;
 }
 export interface Game {
     id: number;
     name: string;
     background_image:string;
-    parent_platformes:{platform:Platform}[]
+    parent_platforms:{platform:Platform}[];
+    metacritic:number;
   }
   interface FetchGameResponse {
     count: number;
@@ -31,7 +32,7 @@ const useGames=()=>{
         });
         
    
-       return()=> controller.abort();
+       //return()=> controller.abort();
 },[]);
 return {games,error}
 }
